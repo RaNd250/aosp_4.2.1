@@ -1,0 +1,70 @@
+-----------------
+19/set/2013 09:57:59 UTC
+Loading Xposed (for Zygote)...
+Loading modules from /data/app/com.ceco.gm2.gravitybox-1.apk
+  File does not exist
+-----------------
+19/set/2013 10:01:17 UTC
+Loading Xposed (for Zygote)...
+Loading modules from /system/app/GravityBox.apk
+  Loading class com.ceco.gm2.gravitybox.GravityBox
+Hardware: mt6589
+Product: V7
+Device manufacturer: ZWX
+Device brand: ZOPO
+Device model: ZP980
+Device type: phone
+Is MTK device: true
+Has Gemini support: true
+Android SDK: 17
+Android Release: 4.2.1
+ROM: GizChina.it rom v15 by Marsapa
+ModSignalIconHide: initZygote
+FixTraceFlood: initZygote
+ModLockscreen: initZygote
+ModVolumeKeySkipTrack: init
+ModVolumeKeySkipTrack: allowSkipTrack = false
+ModVolKeyCursor: initZygote
+ModCallCard: initZygote
+ModStatusbarColor: replacing getSystemDecorRectLw method
+PhoneWrapper: Entering init state
+ModLowBatteryWarning: initZygote
+ModAudio: Safe headset media volume set to: false
+PatchMasterKey: Patching MasterKey vulnerabilities
+ModDisplay: LightsService constructed. Broadcast receiver registered.
+ModHwKeys: Phone window manager initialized
+ModVolumePanel: VolumePanel constructed; mVolumePanel set
+ModVolumePanel: VolumePanel mode changed to: EXPANDABLE
+ModVolumePanel: AudioService constructed: mAudioService set
+ModVolumePanel: AudioService mStreamVolumeAlias updated, STREAM_NOTIFICATION set to: 2
+ModAudio: AudioService constructed. Broadcast receiver registered
+ModSignalIconHide: init
+ModSignalIconHide: autohideSlot1 = false; autohideSlot2 = false
+ModBatteryStyle: init
+ModLowBatteryWarning: init
+ModQuickSettings: init
+ModQuickSettings: got tile prefs: mActiveTileKeys = [wifi_ap_tileview, rssi_textview, user_textview, quickrecord_tileview, volume_tileview, gps_textview, airplane_mode_textview, battery_textview, sync_tileview, brightness_textview, bluetooth_textview, data_conn_textview, gravitybox_tileview, quickapp_tileview, wifi_textview, network_mode_tileview, sleep_tileview, torch_tileview, timeout_textview, audio_profile_textview, auto_rotate_textview]
+ModStatusbarColor: SignalClusterView constructed - mSignalClusterView set
+ModStatusbarColor: SignalClusterView constructed - mSignalClusterView set
+ModBatteryStyle: CmCircleBattery injected
+ModCenterClock: mLayoutClock injected
+ModQuickSettings: QuickSettings constructed - initializing local members
+ModQuickSettings: mStatusBar set
+ModQuickSettings: mPanelBar set
+ModLockscreen: maybeCreateKeyguardLocked: layout updated
+ModCallCard: init
+ModQuickSettings: about to add tiles
+PhoneWrapper: getDefaultNetworkMode: mode=0
+QuickAppTile: SettingsObserver onChange()
+ModStatusbarColor: statusbar background color set to: -16777216
+ModQuickSettings: makeStatusBarView: SimSwitchPanelView found
+ModBatteryStyle: BatteryController.addIconView(circleBattery)
+ModPieController: BaseStatusBar starting...
+ModPieController: PieSettingsObserver onChange()
+SystemPropertyProvider: SystemUIService created. Registering BroadcastReceiver
+ModDisplay: Broadcast received: Intent { act=android.intent.action.SCREEN_ON flg=0x50000010 }
+PhoneWrapper: PhoneFactory makeDefaultPhones - phone wrapper initialized
+SystemPropertyProvider: Broadcast received: Intent { act=gravitybox.intent.action.ACTION_GET_SYSTEM_PROPERTIES flg=0x10 (has extras) }
+ModCenterClock: Broadcast received: Intent { act=gravitybox.intent.action.CENTER_CLOCK_CHANGED flg=0x10 (has extras) }
+ModCenterClock: Clock set to center position
+ModCenterClock: Broadcast received: Intent { act=gravitybox.intent.action.CENTER_CLOCK_CHANGED flg=0x10 (has extras) }

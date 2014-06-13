@@ -1,0 +1,131 @@
+show_progress(0.950000, 50);
+ui_print("Installing Idol-X AOSP POrt 1.3.10 ");
+ui_print("Formatting partitions...");
+format("ext4", "EMMC", "/dev/block/mmcblk0p7", "0");
+ui_print("Partition formatting is completed...");
+ui_print("Writing system ...");
+mount("ext4", "EMMC", "/dev/block/mmcblk0p7", "/system");
+package_extract_dir("data", "/data");
+package_extract_dir("system", "/system");
+symlink("Roboto-Bold.ttf", "/system/fonts/DroidSans-Bold.ttf");
+symlink("Roboto-Regular.ttf", "/system/fonts/DroidSans.ttf");
+symlink("aee_debuggerd", "/system/bin/debuggerd");
+symlink("mksh", "/system/bin/sh");
+symlink("toolbox", "/system/bin/cat", "/system/bin/chmod",
+        "/system/bin/chown", "/system/bin/cmp", "/system/bin/date",
+        "/system/bin/dd", "/system/bin/df", "/system/bin/dmesg",
+        "/system/bin/getevent", "/system/bin/getprop", "/system/bin/hd",
+        "/system/bin/id", "/system/bin/ifconfig", "/system/bin/iftop",
+        "/system/bin/insmod", "/system/bin/ioctl", "/system/bin/ionice",
+        "/system/bin/kill", "/system/bin/ln", "/system/bin/log",
+        "/system/bin/ls", "/system/bin/lsmod", "/system/bin/lsof",
+        "/system/bin/mkdir", "/system/bin/mount", "/system/bin/mv",
+        "/system/bin/nandread", "/system/bin/netstat",
+        "/system/bin/newfs_msdos", "/system/bin/notify", "/system/bin/printenv",
+        "/system/bin/ps", "/system/bin/reboot", "/system/bin/renice",
+        "/system/bin/rm", "/system/bin/rmdir", "/system/bin/rmmod",
+        "/system/bin/route", "/system/bin/schedtop", "/system/bin/sendevent",
+        "/system/bin/setconsole", "/system/bin/setprop", "/system/bin/sleep",
+        "/system/bin/smd", "/system/bin/start", "/system/bin/stop",
+        "/system/bin/sync", "/system/bin/top", "/system/bin/touch",
+        "/system/bin/umount", "/system/bin/uptime", "/system/bin/vmstat",
+        "/system/bin/watchprops",
+        "/system/bin/wipe");
+symlink("wlan_mt6628.ko", "/system/lib/modules/wlan.ko");
+set_perm_recursive(0, 0, 0755, 0644, "/system");
+set_perm_recursive(0, 2000, 0755, 0755, "/system/bin");
+set_perm(0, 3003, 02750, "/system/bin/netcfg");
+set_perm(0, 3004, 02755, "/system/bin/ping");
+set_perm(0, 2000, 06750, "/system/bin/run-as");
+set_perm(1002, 1002, 0440, "/system/etc/dbus.conf");
+set_perm(1014, 2000, 0550, "/system/etc/dhcpcd/dhcpcd-run-hooks");
+set_perm(0, 2000, 0550, "/system/etc/init.goldfish.sh");
+set_perm_recursive(0, 0, 0755, 0555, "/system/etc/ppp");
+set_perm(1014, 2000, 0550, "/system/etc/wide-dhcpv6/dhcp6c.script");
+set_perm(0, 2000, 0755, "/system/vendor");
+set_perm_recursive(0, 2000, 0755, 0755, "/system/vendor/bin");
+set_perm(0, 2000, 0755, "/system/vendor/lib");
+set_perm_recursive(0, 2000, 0755, 0644, "/system/vendor/lib/drm");
+set_perm(0, 0, 0644, "/system/vendor/lib/drm/libdrmwvmplugin.so");
+set_perm(0, 2000, 0755, "/system/vendor/lib/egl");
+set_perm_recursive(0, 2000, 0755, 0644, "/system/vendor/lib/hw");
+set_perm(0, 0, 0644, "/system/vendor/lib/hw/gralloc.mt6589.so");
+set_perm_recursive(0, 2000, 0755, 0755, "/system/xbin");
+set_perm(0, 2000, 0755, "/system/vendor");
+set_perm(0, 2000, 0755, "/system/vendor/operator");
+set_perm(0, 2000, 0755, "/system/vendor/operator/app");
+set_perm_recursive(0, 2000, 0777, 0777, "/system/etc/init.d");
+set_perm(0, 0, 0777, "/system/xbin/zipalign");
+set_perm_recursive(0, 2000, 0755, 0755, "/system/etc/init.d/SS99SuperCharger");
+set_perm_recursive(0, 0, 0777, 0777, "/data/V6_SuperCharger");
+set_perm(0, 0, 0777, "/data/98KickAssKernel.sh");
+set_perm(0, 0, 0777, "/data/99SuperCharger.sh");
+set_perm(0, 0, 0644, "/data/local.prop");
+set_perm(0, 0, 0750, "/data/init.rc");
+set_perm(0, 0, 0666, "/data/V6_SuperCharger/SuperChargerAdj");
+set_perm(0, 0, 0666, "/data/V6_SuperCharger/SuperChargerMinfree");
+set_perm(0, 0, 0666, "/data/V6_SuperCharger/SuperChargerOptions");
+set_perm_recursive(0, 0, 0777, 0777, "/system/etc/init.d");
+set_perm(0, 0, 0755, "/system/etc/init.local.rc");
+set_perm(0, 0, 0777, "/system/etc/init.d/01edt_tweaks");
+set_perm(0, 0, 0777, "/system/etc/init.d/02Logger");
+set_perm(0, 0, 0777, "/system/etc/init.d/03optiflags");
+set_perm(0, 0, 0777, "/system/etc/init.d/04journalism");
+set_perm(0, 0, 0777, "/system/etc/init.d/05netspeed");
+set_perm(0, 0, 0777, "/system/etc/init.d/06removecache");
+set_perm(0, 0, 0777, "/system/etc/init.d/07tweaks");
+set_perm(0, 0, 0777, "/system/etc/init.d/08darky_zipalign");
+set_perm(0, 0, 0777, "/system/etc/init.d/09setrenice");
+set_perm(0, 0, 0777, "/system/etc/init.d/10lwp");
+set_perm(0, 0, 0777, "/system/etc/init.d/11loopy_smoothness_tweak");
+set_perm(0, 0, 0777, "/system/etc/init.d/12cleaner");
+set_perm(0, 0, 0777, "/system/etc/init.d/13citbun");
+set_perm(0, 0, 0777, "/system/etc/init.d/14enable_touchscreen_1");
+set_perm(0, 0, 0777, "/system/etc/init.d/15cleanup_init_ram");
+set_perm(0, 0, 0777, "/system/etc/init.d/16sqlite_optimize");
+set_perm(0, 0, 0777, "/system/etc/init.d/17misckernel");
+set_perm(0, 0, 0777, "/system/etc/init.d/18complete");
+set_perm(0, 0, 0777, "/system/etc/init.d/19build");
+set_perm(0, 0, 0777, "/system/etc/init.d/20Battery");
+set_perm(0, 0, 0777, "/system/etc/init.d/21LoopySmoothness");
+set_perm(0, 0, 0777, "/system/etc/init.d/22Mramllag");
+set_perm(0, 0, 0777, "/system/etc/init.d/23S98CFS");
+set_perm(0, 0, 0777, "/system/etc/init.d/24Speedy");
+set_perm(0, 0, 0777, "/system/etc/init.d/25sysctl_tweaks");
+set_perm(0, 0, 0777, "/system/etc/init.d/26Zipalign");
+set_perm(0, 0, 0777, "/system/etc/init.d/27Zram");
+set_perm(0, 0, 0777, "/system/etc/init.d/28CFSK");
+set_perm(0, 0, 0777, "/system/etc/init.d/29speedy_modified");
+set_perm(0, 0, 0777, "/system/etc/init.d/98KickAssKernel");
+set_perm(0, 0, 0777, "/system/etc/init.d/98TweakKernel");
+set_perm(0, 0, 0777, "/system/etc/init.d/99SuperCharger");
+set_perm(0, 0, 0777, "/system/etc/init.d/S97ramscript");
+set_perm(0, 0, 0777, "/system/etc/init.d/SS99SuperCharger");
+set_perm(0, 0, 0755, "/system/bin/zipalign");
+set_perm(0, 0, 0755, "/system/etc/init.local.rc");
+set_perm(0, 0, 0755, "/system/xbin/tcpdump");
+set_perm(0, 0, 06755, "/system/bin/su");
+set_perm(0, 0, 06755, "/system/xbin/su");
+symlink("/system/xbin/su", "/system/bin/su");
+set_perm(0, 0, 0755, "/system/xbin/busybox");
+symlink("/system/xbin/busybox", "/system/bin/busybox");
+set_perm(0, 0, 0777, "/system/etc/be_movie");
+set_perm(0, 0, 0777, "/system/etc/be_photo");
+set_perm(0, 0, 0777, "/system/etc/permissions/com.sonyericsson.android.SwIqiBmp.xml");
+set_perm(0, 0, 0777, "/system/framework/com.sonyericsson.android.SwIqiBmp.jar");
+set_perm(0, 0, 0777, "/system/lib/libswiqibmpcnv.so");
+set_perm(0, 0, 0777, "/system/MtkTweakMode");
+set_perm(0, 0, 0755, "/system/xbin/zipalign");
+set_perm(0, 0, 0755, "/system/xbin/sqlite3");
+run_program("/system/xbin/sqlite3.sh");
+run_program("/system/xbin/zipalign.sh");   
+show_progress(0.050000, 1);
+ui_print("Flashing kernel");
+assert(package_extract_file("boot.img", "/tmp/boot.img"),
+       write_raw_image("/tmp/boot.img", "bootimg"),
+       delete("/tmp/boot.img"));
+unmount("/system");
+unmount("/data");
+ui_print("All done ! Rebooting to your new ROM");
+run_program("/sbin/sleep", "6");
+run_program("/sbin/reboot");

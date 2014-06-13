@@ -1,0 +1,29 @@
+echo 50 > /proc/sys/vm/vfs_cache_pressure;
+echo 3 > /proc/sys/vm/page-cluster;
+echo 0 > /proc/sys/vm/laptop_mode;
+echo 3000 > /proc/sys/vm/dirty_expire_centisecs;
+echo 500 > /proc/sys/vm/dirty_writeback_centisecs;
+echo 25 > /proc/sys/vm/dirty_background_ratio;
+echo 65 > /proc/sys/vm/dirty_ratio;
+echo 50 > /proc/sys/vm/vfs_cache_pressure;
+echo 1 > /proc/sys/vm/overcommit_memory;
+echo 0 > /proc/sys/vm/oom_kill_allocating_task;
+echo 0 > /proc/sys/vm/panic_on_oom;
+echo 1 > /proc/sys/kernel/panic_on_oops;
+echo 0 > /proc/sys/kernel/panic;
+echo 256960 > /proc/sys/net/core/rmem_default;
+echo 256960 > /proc/sys/net/core/wmem_default;
+echo 4096 16384 404480 > /proc/sys/net/ipv4/tcp_wmem;
+echo 4096 87380 404480 > /proc/sys/net/ipv4/tcp_rmem;
+echo 2000 > /proc/sys/vm/dirty_writeback_centisecs;
+echo 1000 > /proc/sys/vm/dirty_expire_centisecs;
+
+busybox mount -o remount,noatime,nodiratime,remount,rw,barrier=0,data=writeback /data;
+busybox mount -o remount,noatime,nodiratime,remount,rw,barrier=0,data=writeback /cache;
+busybox mount -o remount,noatime,nodiratime /dev;
+busybox mount -o remount,noatime,nodiratime /proc;
+busybox mount -o remount,noatime,nodiratime /sys;
+busybox mount -o remount,noatime,nodiratime /system;
+echo 4096 > /sys/block/mmcblk0/queue/nr_requests;
+echo 2048 > /sys/devices/virtual/bdi/179:0/read_ahead_kb;
+

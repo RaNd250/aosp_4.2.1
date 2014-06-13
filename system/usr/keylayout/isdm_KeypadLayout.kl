@@ -1,0 +1,17 @@
+#HISTORY:This files contains Android ISDM_KEYPADLAYOUT customize variables
+#HISTORY:2014-03-26:16:14:26 creation
+
+#DSA_TITLE:INIT DATA OF ANDROID ISDM_KEYPADLAYOUT
+#MACRO_NAME:CUSTOM_JRDC_PARAM
+#C_NAME:custom_jrdc_dsc
+#C_TYPE:CUSTOM_JRDC_DSC
+#IDA:CUSTOM_JRDC_INIT_RDM
+#IS_IN_DSA:Yes
+
+
+#just for brandy keypad layout
+#author:wteng<wei.teng@jrdcom.com>
+#date  :2011-1-5
+key 158 BACK
+key 172 HOME
+key 139 MENU

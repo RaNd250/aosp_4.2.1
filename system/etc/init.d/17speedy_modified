@@ -1,0 +1,37 @@
+#!/system/bin/sh
+#
+# 
+# Remount each file system with noatime and nodiratime flags to save battery and CPU cycles
+# and change journaling mode for data and cache
+#
+busybox mount -o remount,noatime,nodiratime,remount,rw,barrier=0,data=writeback /data;
+busybox mount -o remount,noatime,nodiratime,remount,rw,barrier=0,data=writeback /cache;
+busybox mount -o remount,noatime,nodiratime /dev;
+busybox mount -o remount,noatime,nodiratime /proc;
+busybox mount -o remount,noatime,nodiratime /sys;
+busybox mount -o remount,noatime,nodiratime /system;
+
+
+# Flag 
+# --------------
+#
+# 
+#.
+#
+
+MMC=`ls -d /sys/block/mmc*`;
+for q in $MMC
+do
+
+	echo "0" > $q/queue/rotational;
+	echo "1" > $q/queue/iosched/fifo_batch;
+	echo "1" > $q/queue/iosched/low_latency;
+	echo "1" > $q/queue/iosched/back_seek_penalty;
+	echo "1000000000" > $q/queue/iosched/back_seek_max;
+	echo "3" > $q/queue/iosched/slice_idle; 
+	echo "16" > $q/queue/iosched/quantum
+	echo "512" > $q/queue/nr_requests;
+done
+
+# ported and modified by mwakious
+# credits to the creator
